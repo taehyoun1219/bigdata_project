@@ -1,0 +1,7 @@
+다운 받을 것들
+
+pip install selenium
+
+!apt-get update
+!apt-get install -y chromium-chromedriver
+!pip install dash
