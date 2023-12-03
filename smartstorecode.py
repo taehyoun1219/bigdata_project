@@ -119,8 +119,6 @@ app.layout = html.Div([
         id='my-dropdown',
         options=[
             {'label':'Apple', 'value':'/content/naver_shopping(애플).xlsx'}
-            #{'label':'Samsung', 'value':'./naver_shopping(삼성전자).xlsx'},
-            #{'label':'Xiaomi', 'value':'./naver_shopping(샤오미).xlsx'}
         ],
         value= '/content/naver_shopping(애플).xlsx'
     ),
