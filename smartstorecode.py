@@ -30,7 +30,6 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument(f"--window-size=1920,1080")
 
-# Chrome 드라이버는 이미 설치되어 있으므로 별도로 경로를 지정할 필요가 없습니다.
 
 driver = webdriver.Chrome(options=chrome_options)
 
@@ -112,11 +111,9 @@ result = pd.DataFrame({
 df = result[result['리뷰수'] != 0]
 
 
-# dashboard app
 app = dash.Dash('Naver Shopping Trend',
                 external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 
-# app layout-> html 수정.
 app.layout = html.Div([
     dcc.Dropdown(
         id='my-dropdown',
@@ -132,9 +129,7 @@ app.layout = html.Div([
 
 
 @app.callback(Output('my-graph', 'figure'), [Input('my-dropdown', 'value')])
-# dash가 실제로 실행하는 그래프를 update_graph 함수로 정의합니다.
 def update_graph(selected_dropdown_value):
-    # 내가 선택한 label에 해당하는 파일 이름
 
     return {
         'data': [
@@ -144,7 +139,6 @@ def update_graph(selected_dropdown_value):
         'layout': {'margin': {'l': 40, 'r': 0, 't': 20, 'b': 30}}
     }
 
-# dash app이 실행됩니다.
 app.run_server(debug=True, use_reloader=False)
 #app.run_server(host='192.168.0.3', port=3003)
 
